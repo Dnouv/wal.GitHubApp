@@ -1,0 +1,16 @@
+{
+    "id": "ffee4e6e-2084-4876-ba36-9b5fb5b09d7d",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.19.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "Dnouv",
+        "homepage": "github.com/Dnouv",
+        "support": "open.rocket.chat/evan.shu"
+    },
+    "name": "Wal.GitHub",
+    "nameSlug": "walgithub",
+    "classFile": "WalGitHubApp.ts",
+    "description": "Integrates GitHub with your Rocket.Chat",
+    "implements": []
+}

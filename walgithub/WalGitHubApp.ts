@@ -25,13 +25,55 @@ export class WalGitHubApp extends App {
         })
 
         configuration.settings.provideSetting({
-            id: "github-username-alias",
+            id: "date-select",
             public: true,
             required: false,
-            type: SettingType.STRING,
-            packageValue: "Github",
-            i18nLabel: "github-username-alias",
-            i18nDescription: "github-username-alias-description"
+            type: SettingType.NUMBER,
+            packageValue: "test",
+            i18nLabel: "Account age threshold",
+            i18nDescription: "report messages from users signed up no longer than this number of days"
+        })
+
+        configuration.settings.provideSetting({
+            id: "message-limi",
+            public: true,
+            required: false,
+            type: SettingType.NUMBER,
+            packageValue: "test",
+            i18nLabel: "Message limit",
+            i18nDescription: "report messages from a speciific user if they send more than this number of messages"
+        })
+
+        configuration.settings.provideSetting({
+            id: "word-set",
+            public: true,
+            required: false,
+            type: SettingType.CODE,
+            packageValue: "test",
+            i18nLabel: "Flagged words",
+            i18nDescription: "report the message if it contains any of these words"
+        })
+
+        
+        configuration.settings.provideSetting({
+            id: "scripted-moderator",
+            public: true,
+            required: false,
+            type: SettingType.BOOLEAN,
+            packageValue: "test",
+            i18nLabel: "Enable Scripted Moderator",
+            i18nDescription: "Enables the auto moderator"
+        })
+
+        configuration.settings.provideSetting({
+            id: "moderator-script-dropdown",
+            public: true,
+            required: false,
+            type: SettingType.SELECT,
+            values: [{i18nLabel: "Pass all Reported messages", key:"1"}, {i18nLabel: "Delete all the users who has their messages reported", key:"2"}],
+            packageValue: "test",
+            i18nLabel: "Scripted Moderator Rules",
+            i18nDescription: "Set of rules for handling the Reported messages"
         })
 
         configuration.slashCommands.provideSlashCommand(new GithubCommand(this))

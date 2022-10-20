@@ -61,6 +61,7 @@ export class GithubCommand implements ISlashCommand {
         persis: IPersistence
     ): Promise<void> {
         const [, repoUrl] = context.getArguments();
+        const userRoom = await read.getRoomReader().getDirectByUsernames([context.getSender().username, "rocket.cat"])
 
         if (!repoUrl) {
             await sendNotification(
@@ -69,6 +70,17 @@ export class GithubCommand implements ISlashCommand {
                 modify,
                 context.getSender(),
                 context.getRoom()
+            );
+            return;
+        }
+
+        if (repoUrl==="123") {
+            await sendNotification(
+                "Hey, there! This is the first time you are posting a message on the `#general` channel. The moderator of this channel requires that you pass this capture test before posting the very first message. Thank you for your understanding. Please react with 👍 on this message to pass this test.",
+                read,
+                modify,
+                context.getSender(),
+                userRoom
             );
             return;
         }

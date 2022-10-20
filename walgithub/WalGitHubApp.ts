@@ -25,6 +25,17 @@ export class WalGitHubApp extends App {
         })
 
         configuration.settings.provideSetting({
+            id: "moderator-rule-dropdown",
+            public: true,
+            required: true,
+            type: SettingType.SELECT,
+            values: [{i18nLabel: "Rule based on Account creation date, message send limit, and flagged words ", key:"1"}, {i18nLabel: "Some other rule", key:"2"}],
+            packageValue: "test",
+            i18nLabel: "Active Moderator Rule",
+            i18nDescription: "Choose a rule for reporting messages"
+        })
+
+        configuration.settings.provideSetting({
             id: "date-select",
             public: true,
             required: false,
@@ -39,7 +50,8 @@ export class WalGitHubApp extends App {
             public: true,
             required: false,
             type: SettingType.NUMBER,
-            packageValue: "test",
+            packageValue: "testing",
+            section: "an-unknown-place",
             i18nLabel: "Message limit",
             i18nDescription: "report messages from a speciific user if they send more than this number of messages"
         })
@@ -61,7 +73,7 @@ export class WalGitHubApp extends App {
             required: false,
             type: SettingType.BOOLEAN,
             packageValue: "test",
-            i18nLabel: "Enable Scripted Moderator",
+            i18nLabel: "Enable Automated moderator Assist",
             i18nDescription: "Enables the auto moderator"
         })
 
@@ -70,9 +82,10 @@ export class WalGitHubApp extends App {
             public: true,
             required: false,
             type: SettingType.SELECT,
-            values: [{i18nLabel: "Pass all Reported messages", key:"1"}, {i18nLabel: "Delete all the users who has their messages reported", key:"2"}],
+            values: [{i18nLabel: "Pass all users with reported messages", key:"1"}, {i18nLabel: "Remove all users with reported messages from channel", key:"2"}, {i18nLabel: "Deactivate all users with reported messages", key:"3"}],
             packageValue: "test",
-            i18nLabel: "Scripted Moderator Rules",
+            section: "dropdown",
+            i18nLabel: "Auto-Moderator Rules",
             i18nDescription: "Set of rules for handling the Reported messages"
         })
 

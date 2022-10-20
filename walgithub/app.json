@@ -8,9 +8,9 @@
         "homepage": "github.com/Dnouv",
         "support": "open.rocket.chat/evan.shu"
     },
-    "name": "Content Moderator",
+    "name": "Rocket.Chat Moderator",
     "nameSlug": "walgithub",
     "classFile": "WalGitHubApp.ts",
-    "description": "Content Moderation for your Rocket.Chat Server",
+    "description": "Moderation for your Rocket.Chat Server",
     "implements": []
 }
